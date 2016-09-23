@@ -26,6 +26,7 @@
 		F1CF64AD1D93EAF30080B798 /* CommentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64AC1D93EAF30080B798 /* CommentCollectionCell.swift */; };
 		F1CF64B21D93F06D0080B798 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64B11D93F06D0080B798 /* MBProgressHUD.m */; };
 		F1E74E581D950DA200B56613 /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E74E571D950DA200B56613 /* Reachibility.swift */; };
+		F1E74E5A1D952B0C00B56613 /* .gitIgnore in Resources */ = {isa = PBXBuildFile; fileRef = F1E74E591D952B0C00B56613 /* .gitIgnore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		F1E74E511D94F10C00B56613 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MVVM-DEMO-aezmlczajvdwujdfcmwnwzfmesiu/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		F1E74E521D94F10C00B56613 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MVVM-DEMO-aezmlczajvdwujdfcmwnwzfmesiu/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		F1E74E571D950DA200B56613 /* Reachibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachibility.swift; sourceTree = "<group>"; };
+		F1E74E591D952B0C00B56613 /* .gitIgnore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitIgnore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,8 @@
 		F1CF645F1D93961A0080B798 = {
 			isa = PBXGroup;
 			children = (
+				F1E74E591D952B0C00B56613 /* .gitIgnore */,
+				F1CF64991D9396870080B798 /* PodFile */,
 				F12A93961D93F29100F35967 /* HelperClass */,
 				F1CF64AE1D93F04C0080B798 /* Libraries */,
 				F1CF64AA1D93E8B20080B798 /* ViewControllers */,
@@ -152,7 +156,6 @@
 				F1CF64A11D93A25D0080B798 /* Model */,
 				F1CF649E1D939F430080B798 /* ConstantsFile */,
 				F1CF649B1D9397900080B798 /* WebServiceWrapper */,
-				F1CF64991D9396870080B798 /* PodFile */,
 				F1CF646A1D93961A0080B798 /* MVVM-DEMO */,
 				F1CF647F1D93961A0080B798 /* MVVM-DEMOTests */,
 				F1CF648A1D93961A0080B798 /* MVVM-DEMOUITests */,
@@ -387,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E74E5A1D952B0C00B56613 /* .gitIgnore in Resources */,
 				F1CF64761D93961A0080B798 /* LaunchScreen.storyboard in Resources */,
 				F1CF64731D93961A0080B798 /* Assets.xcassets in Resources */,
 				F1CF649A1D9396870080B798 /* PodFile in Resources */,
