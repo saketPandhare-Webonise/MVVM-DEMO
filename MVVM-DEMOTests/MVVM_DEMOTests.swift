@@ -44,6 +44,12 @@ class MVVM_DEMOTests: XCTestCase {
     {
         let email = userCommentHelper.convertEmailToLowerCase("Saketpandhare@yahoo.com")
         XCTAssert(email == "saketpandhare@yahoo.com")
+        
+        let blankEmail = userCommentHelper.convertEmailToLowerCase("")
+        XCTAssert(blankEmail == "No Email Found For The User","Error email is blank")
+        
+        let validEmail = userCommentHelper.convertEmailToLowerCase("abc,123")
+        XCTAssert(validEmail == "Not a valid email", "Please enter valid email")
     }
     
     func testproperUserName()

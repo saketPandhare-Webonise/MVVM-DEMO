@@ -16,8 +16,24 @@ class UserCommentHelper: NSObject {
     
     func convertEmailToLowerCase (email : NSString) ->NSString
     {
-       
+       if (email.length == 0)
+       {
+            return "No Email Found For The User"
+       }
+       if (!(self.isValidEmail(email as String)))
+       {
+              return "Not a valid email"
+       }
+        
         return email.lowercaseString
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(testStr)
     }
     
     func properUserName (userName : NSString) -> NSString
