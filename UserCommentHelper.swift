@@ -46,6 +46,21 @@ class UserCommentHelper: NSObject {
         let separators = NSCharacterSet(charactersInString: " ")
         var words = userName.componentsSeparatedByCharactersInSet(separators)
         
+        if (userName.length == 0)
+        {
+            return "userName is Blank"
+        }
+       
+        if (words.count < 2)
+        {
+            return "Middle Name is blank"
+        }
+        
+        if (words.count < 3)
+        {
+            return "Last name is blank"
+        }
+        
         let firstName : String = words[0]
         let middleName : String = words[1]
         let lastName : String = words[2]

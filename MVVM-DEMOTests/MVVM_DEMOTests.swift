@@ -56,6 +56,15 @@ class MVVM_DEMOTests: XCTestCase {
     {
         let name = userCommentHelper.properUserName("saket pramod pandhare anuradha")
         XCTAssert(name == "saket pramod pandhare ...")
+        
+        let userNameBlank = userCommentHelper.properUserName("")
+        XCTAssert(userNameBlank == "userName is Blank", "Valid Name is expected")
+        
+        let middleNameBlank = userCommentHelper.properUserName("saket")
+        XCTAssert(middleNameBlank == "Middle Name is blank", "Enter Valid Middle Name")
+        
+        let lastName = userCommentHelper.properUserName("saket pramod")
+        XCTAssert(lastName == "Last name is blank", "Enter Valid last name")
     }
     
 }
