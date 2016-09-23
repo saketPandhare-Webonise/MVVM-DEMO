@@ -1,0 +1,19 @@
+use_frameworks!
+
+
+def available_pods
+
+pod 'RealmSwift', '~> 1.1'
+pod 'Alamofire', '~> 3.2'
+
+end
+
+
+target "MVVM-DEMO" do
+available_pods
+end
+
+
+target 'MVVM-DEMOTests' do
+available_pods
+end
