@@ -13,6 +13,7 @@ class WebserviceAPI: NSObject {
 
     func callWebservice (serviceName : String , method : String, requestParameters : String?,completionHandler: (NSArray) ->Void)
     {
+        
         if Reachability.isConnectedToNetwork() == true {
             print("Internet connection OK")
         } else {
