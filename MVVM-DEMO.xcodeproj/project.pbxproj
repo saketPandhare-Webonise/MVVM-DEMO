@@ -10,8 +10,10 @@
 		364B1B5C79172F191F737B14 /* Pods_MVVM_DEMOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E042B7DC6E2EA52AF2EBCDA /* Pods_MVVM_DEMOTests.framework */; };
 		A72DF6E58AAD8221B32130FA /* Pods_MVVM_DEMO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEEC964BC9066A8DD8E7947 /* Pods_MVVM_DEMO.framework */; };
 		F12A93981D93F2BB00F35967 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A93971D93F2BB00F35967 /* UIHelper.swift */; };
+		F164A0ED1D9A4A0A00E1BFD6 /* WebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A0EC1D9A4A0A00E1BFD6 /* WebServiceWrapper.swift */; };
+		F164A0F11D9A4F1900E1BFD6 /* CommentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164A0F01D9A4F1900E1BFD6 /* CommentTableCell.swift */; };
 		F1CF646C1D93961A0080B798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF646B1D93961A0080B798 /* AppDelegate.swift */; };
-		F1CF646E1D93961A0080B798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF646D1D93961A0080B798 /* ViewController.swift */; };
+		F1CF646E1D93961A0080B798 /* UserCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF646D1D93961A0080B798 /* UserCommentVC.swift */; };
 		F1CF64711D93961A0080B798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CF646F1D93961A0080B798 /* Main.storyboard */; };
 		F1CF64731D93961A0080B798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1CF64721D93961A0080B798 /* Assets.xcassets */; };
 		F1CF64761D93961A0080B798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CF64741D93961A0080B798 /* LaunchScreen.storyboard */; };
@@ -20,10 +22,9 @@
 		F1CF649A1D9396870080B798 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = F1CF64991D9396870080B798 /* PodFile */; };
 		F1CF649D1D9397C30080B798 /* WebserviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF649C1D9397C30080B798 /* WebserviceAPI.swift */; };
 		F1CF64A01D939F6A0080B798 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF649F1D939F6A0080B798 /* Constants.swift */; };
-		F1CF64A31D93A2ED0080B798 /* UserComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64A21D93A2ED0080B798 /* UserComments.swift */; };
+		F1CF64A31D93A2ED0080B798 /* UserCommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64A21D93A2ED0080B798 /* UserCommentsModel.swift */; };
 		F1CF64A61D93B2740080B798 /* UserCommentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64A51D93B2740080B798 /* UserCommentHelper.swift */; };
-		F1CF64A91D93D53D0080B798 /* userCommentCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64A81D93D53D0080B798 /* userCommentCollectionDataSource.swift */; };
-		F1CF64AD1D93EAF30080B798 /* CommentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64AC1D93EAF30080B798 /* CommentCollectionCell.swift */; };
+		F1CF64A91D93D53D0080B798 /* UserCommentTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64A81D93D53D0080B798 /* UserCommentTableViewSource.swift */; };
 		F1CF64B21D93F06D0080B798 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CF64B11D93F06D0080B798 /* MBProgressHUD.m */; };
 		F1E74E581D950DA200B56613 /* Reachibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E74E571D950DA200B56613 /* Reachibility.swift */; };
 		F1E74E5A1D952B0C00B56613 /* .gitIgnore in Resources */ = {isa = PBXBuildFile; fileRef = F1E74E591D952B0C00B56613 /* .gitIgnore */; };
@@ -54,9 +55,11 @@
 		6EB452A1058509E093E5451D /* Pods-MVVM-DEMOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-DEMOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-DEMOTests/Pods-MVVM-DEMOTests.release.xcconfig"; sourceTree = "<group>"; };
 		6FE7580A80C188C4FCFDEBA3 /* Pods-MVVM-DEMOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-DEMOTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-DEMOTests/Pods-MVVM-DEMOTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F12A93971D93F2BB00F35967 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		F164A0EC1D9A4A0A00E1BFD6 /* WebServiceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceWrapper.swift; sourceTree = "<group>"; };
+		F164A0F01D9A4F1900E1BFD6 /* CommentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableCell.swift; sourceTree = "<group>"; };
 		F1CF64681D93961A0080B798 /* MVVM-DEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-DEMO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CF646B1D93961A0080B798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1CF646D1D93961A0080B798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "MVVM-DEMO/ViewController.swift"; sourceTree = "<group>"; };
+		F1CF646D1D93961A0080B798 /* UserCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCommentVC.swift; path = "MVVM-DEMO/UserCommentVC.swift"; sourceTree = "<group>"; };
 		F1CF64701D93961A0080B798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1CF64721D93961A0080B798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1CF64751D93961A0080B798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,10 +73,9 @@
 		F1CF64991D9396870080B798 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
 		F1CF649C1D9397C30080B798 /* WebserviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceAPI.swift; sourceTree = "<group>"; };
 		F1CF649F1D939F6A0080B798 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F1CF64A21D93A2ED0080B798 /* UserComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComments.swift; sourceTree = "<group>"; };
+		F1CF64A21D93A2ED0080B798 /* UserCommentsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCommentsModel.swift; sourceTree = "<group>"; };
 		F1CF64A51D93B2740080B798 /* UserCommentHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCommentHelper.swift; sourceTree = "<group>"; };
-		F1CF64A81D93D53D0080B798 /* userCommentCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCommentCollectionDataSource.swift; sourceTree = "<group>"; };
-		F1CF64AC1D93EAF30080B798 /* CommentCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCollectionCell.swift; sourceTree = "<group>"; };
+		F1CF64A81D93D53D0080B798 /* UserCommentTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCommentTableViewSource.swift; sourceTree = "<group>"; };
 		F1CF64AF1D93F06C0080B798 /* MVVM-DEMO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVVM-DEMO-Bridging-Header.h"; sourceTree = "<group>"; };
 		F1CF64B01D93F06D0080B798 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		F1CF64B11D93F06D0080B798 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -143,19 +145,36 @@
 			name = HelperClass;
 			sourceTree = "<group>";
 		};
+		F164A0EA1D9A491400E1BFD6 /* UserComments */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF64A41D93B23D0080B798 /* ModelHelper */,
+				F1CF64A11D93A25D0080B798 /* Model */,
+				F1CF64A71D93D4F00080B798 /* UserCommentListOutsource */,
+				F1CF64AA1D93E8B20080B798 /* UserCommentListVC */,
+			);
+			name = UserComments;
+			sourceTree = "<group>";
+		};
+		F164A0EB1D9A49BC00E1BFD6 /* WebServiceWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F164A0EC1D9A4A0A00E1BFD6 /* WebServiceWrapper.swift */,
+			);
+			name = WebServiceWrapper;
+			sourceTree = "<group>";
+		};
 		F1CF645F1D93961A0080B798 = {
 			isa = PBXGroup;
 			children = (
 				F1E74E591D952B0C00B56613 /* .gitIgnore */,
 				F1CF64991D9396870080B798 /* PodFile */,
+				F1CF649B1D9397900080B798 /* WebServiceAPI */,
+				F164A0EB1D9A49BC00E1BFD6 /* WebServiceWrapper */,
+				F164A0EA1D9A491400E1BFD6 /* UserComments */,
 				F12A93961D93F29100F35967 /* HelperClass */,
 				F1CF64AE1D93F04C0080B798 /* Libraries */,
-				F1CF64AA1D93E8B20080B798 /* ViewControllers */,
-				F1CF64A71D93D4F00080B798 /* ViewControllerWrapper */,
-				F1CF64A41D93B23D0080B798 /* ModelHelper */,
-				F1CF64A11D93A25D0080B798 /* Model */,
 				F1CF649E1D939F430080B798 /* ConstantsFile */,
-				F1CF649B1D9397900080B798 /* WebServiceWrapper */,
 				F1CF646A1D93961A0080B798 /* MVVM-DEMO */,
 				F1CF647F1D93961A0080B798 /* MVVM-DEMOTests */,
 				F1CF648A1D93961A0080B798 /* MVVM-DEMOUITests */,
@@ -205,12 +224,12 @@
 			path = "MVVM-DEMOUITests";
 			sourceTree = "<group>";
 		};
-		F1CF649B1D9397900080B798 /* WebServiceWrapper */ = {
+		F1CF649B1D9397900080B798 /* WebServiceAPI */ = {
 			isa = PBXGroup;
 			children = (
 				F1CF649C1D9397C30080B798 /* WebserviceAPI.swift */,
 			);
-			name = WebServiceWrapper;
+			name = WebServiceAPI;
 			sourceTree = "<group>";
 		};
 		F1CF649E1D939F430080B798 /* ConstantsFile */ = {
@@ -224,7 +243,7 @@
 		F1CF64A11D93A25D0080B798 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F1CF64A21D93A2ED0080B798 /* UserComments.swift */,
+				F1CF64A21D93A2ED0080B798 /* UserCommentsModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -237,27 +256,27 @@
 			name = ModelHelper;
 			sourceTree = "<group>";
 		};
-		F1CF64A71D93D4F00080B798 /* ViewControllerWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				F1CF64A81D93D53D0080B798 /* userCommentCollectionDataSource.swift */,
-			);
-			name = ViewControllerWrapper;
-			sourceTree = "<group>";
-		};
-		F1CF64AA1D93E8B20080B798 /* ViewControllers */ = {
+		F1CF64A71D93D4F00080B798 /* UserCommentListOutsource */ = {
 			isa = PBXGroup;
 			children = (
 				F1CF64AB1D93EABD0080B798 /* commentCollectionCell */,
-				F1CF646D1D93961A0080B798 /* ViewController.swift */,
+				F1CF64A81D93D53D0080B798 /* UserCommentTableViewSource.swift */,
 			);
-			name = ViewControllers;
+			name = UserCommentListOutsource;
+			sourceTree = "<group>";
+		};
+		F1CF64AA1D93E8B20080B798 /* UserCommentListVC */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF646D1D93961A0080B798 /* UserCommentVC.swift */,
+			);
+			name = UserCommentListVC;
 			sourceTree = "<group>";
 		};
 		F1CF64AB1D93EABD0080B798 /* commentCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				F1CF64AC1D93EAF30080B798 /* CommentCollectionCell.swift */,
+				F164A0F01D9A4F1900E1BFD6 /* CommentTableCell.swift */,
 			);
 			name = commentCollectionCell;
 			sourceTree = "<group>";
@@ -512,17 +531,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1CF646E1D93961A0080B798 /* ViewController.swift in Sources */,
+				F1CF646E1D93961A0080B798 /* UserCommentVC.swift in Sources */,
 				F1E74E581D950DA200B56613 /* Reachibility.swift in Sources */,
 				F1CF649D1D9397C30080B798 /* WebserviceAPI.swift in Sources */,
 				F1CF64A61D93B2740080B798 /* UserCommentHelper.swift in Sources */,
 				F12A93981D93F2BB00F35967 /* UIHelper.swift in Sources */,
-				F1CF64A91D93D53D0080B798 /* userCommentCollectionDataSource.swift in Sources */,
+				F1CF64A91D93D53D0080B798 /* UserCommentTableViewSource.swift in Sources */,
+				F164A0F11D9A4F1900E1BFD6 /* CommentTableCell.swift in Sources */,
+				F164A0ED1D9A4A0A00E1BFD6 /* WebServiceWrapper.swift in Sources */,
 				F1CF64B21D93F06D0080B798 /* MBProgressHUD.m in Sources */,
 				F1CF646C1D93961A0080B798 /* AppDelegate.swift in Sources */,
-				F1CF64AD1D93EAF30080B798 /* CommentCollectionCell.swift in Sources */,
 				F1CF64A01D939F6A0080B798 /* Constants.swift in Sources */,
-				F1CF64A31D93A2ED0080B798 /* UserComments.swift in Sources */,
+				F1CF64A31D93A2ED0080B798 /* UserCommentsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

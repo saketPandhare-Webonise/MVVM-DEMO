@@ -86,7 +86,7 @@ class UserCommentHelper: NSObject {
     {
         let realm : Realm
         realm = try! Realm()
-        let comments = realm.objects(UserComments)
+        let comments = realm.objects(UserCommentsModel)
         return Array(comments)
     }
 }

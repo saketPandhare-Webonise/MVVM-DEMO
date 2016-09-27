@@ -11,20 +11,28 @@ import Alamofire
 
 
 
-class ViewController: UIViewController {
+class UserCommentVC: UIViewController {
 
     @IBOutlet weak var userCommentCollectionView: UICollectionView!
-    private let myDataSource = userCommentCollectionDataSource()
+    
+    @IBOutlet weak var userCommentTableView: UITableView!
+    private let myDataSource = UserCommentTableViewSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.getComments()
-        userCommentCollectionView.dataSource = myDataSource
-        userCommentCollectionView.delegate = myDataSource
+        
+        userCommentTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        
+        userCommentTableView.dataSource = myDataSource
+        userCommentTableView.delegate = myDataSource
+        
        self.showHudOnView()
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,18 +42,18 @@ class ViewController: UIViewController {
     
     func getComments ()->Void
     {
-        WebserviceAPI().callWebservice(Constants.BASEURL, method: Constants.GET, requestParameters: nil, completionHandler: { (r) -> Void in
-            
+        
+        WebServiceWrapper().getComments({ (r) -> Void in
             let response = r as NSArray
-
-          for index in 0 ..< response.count
-          {
-            UserComments().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)
-          }
-            self.userCommentCollectionView .reloadData()
-            UIHelper().hideHud(self.view)
             
-        })
+            for index in 0 ..< response.count
+            {
+                UserCommentsModel().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)
+            }
+            self.userCommentTableView .reloadData()
+            UIHelper().hideHud(self.view)
+
+            })
     }
     
     func showHudOnView ()

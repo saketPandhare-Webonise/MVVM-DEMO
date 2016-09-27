@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class UserComments: Object {
+class UserCommentsModel: Object {
 
     dynamic var userDescription : NSString = ""
     dynamic var userEmail : NSString = ""
@@ -28,7 +28,7 @@ class UserComments: Object {
         let realm : Realm
         realm = try! Realm()
 
-        let userComment = UserComments()
+        let userComment = UserCommentsModel()
         userComment.userDescription = singleCommentDictionary .valueForKey(Constants.BODY) as! NSString
         userComment.userEmail = UserCommentHelper().convertEmailToLowerCase(singleCommentDictionary.valueForKey(Constants.USEREMAIL) as! NSString)
         userComment.userName = UserCommentHelper().properUserName(singleCommentDictionary.valueForKey(Constants.USERNAME) as! NSString)

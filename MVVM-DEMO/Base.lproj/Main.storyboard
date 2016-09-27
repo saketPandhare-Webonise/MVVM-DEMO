@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--User CommentVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MVVM_DEMO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UserCommentVC" customModule="MVVM_DEMO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,87 +17,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4B8-Nn-oMv">
-                                <rect key="frame" x="0.0" y="30" width="375" height="634"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="abK-6I-XwB">
-                                    <size key="itemSize" width="337" height="208"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="XWD-jU-uar" customClass="CommentCollectionCell" customModule="MVVM_DEMO" customModuleProvider="target">
-                                        <rect key="frame" x="19" y="0.0" width="337" height="208"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="337" height="208"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="245" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OTM-8A-VKE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="245" id="N6Q-wE-OWR" customClass="CommentTableCell" customModule="MVVM_DEMO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="245"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N6Q-wE-OWR" id="w6X-go-dOZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName:-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV6-dE-5bi">
-                                                    <rect key="frame" x="14" y="19" width="94" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName:-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB6-VZ-WEy">
+                                                    <rect key="frame" x="8" y="20" width="100" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="6bJ-mH-108"/>
+                                                        <constraint firstAttribute="height" constant="33" id="mpB-OB-Tpq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-CG-BEO">
-                                                    <rect key="frame" x="14" y="52" width="74" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Her-wR-VaA">
+                                                    <rect key="frame" x="116" y="20" width="249" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="AKK-2A-JtJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body:-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnP-y9-Gvf">
-                                                    <rect key="frame" x="14" y="92" width="74" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX5-Br-lPM">
+                                                    <rect key="frame" x="71" y="63" width="289" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M1-tG-q4u">
-                                                    <rect key="frame" x="73" y="52" width="256" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ci-cc-QEb">
+                                                    <rect key="frame" x="70" y="91" width="255" height="83"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enh-uJ-2oZ">
-                                                    <rect key="frame" x="73" y="83" width="246" height="98"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyj-9G-2fR">
+                                                    <rect key="frame" x="8" y="63" width="55" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="FWO-fK-RYu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWU-cW-8zq">
-                                                    <rect key="frame" x="110" y="19" width="227" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body:-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4j-fg-hCt">
+                                                    <rect key="frame" x="8" y="91" width="55" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="W8Z-Ch-pTF"/>
+                                                        <constraint firstAttribute="width" constant="55" id="xQB-nK-q66"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29C-L8-s25">
+                                                    <rect key="frame" x="0.0" y="214" width="375" height="30"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="QnQ-pv-1nV"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                            <constraints>
+                                                <constraint firstItem="UX5-Br-lPM" firstAttribute="top" secondItem="Her-wR-VaA" secondAttribute="bottom" constant="10" id="1lR-cq-vPO"/>
+                                                <constraint firstItem="Her-wR-VaA" firstAttribute="leading" secondItem="yB6-VZ-WEy" secondAttribute="trailing" constant="8" id="3gt-yW-Q4M"/>
+                                                <constraint firstItem="O4j-fg-hCt" firstAttribute="leading" secondItem="w6X-go-dOZ" secondAttribute="leading" constant="8" id="F3z-ag-HIi"/>
+                                                <constraint firstItem="29C-L8-s25" firstAttribute="leading" secondItem="w6X-go-dOZ" secondAttribute="leading" id="NGt-C8-MKg"/>
+                                                <constraint firstItem="29C-L8-s25" firstAttribute="top" secondItem="2ci-cc-QEb" secondAttribute="bottom" constant="10" id="OXT-87-cgH"/>
+                                                <constraint firstAttribute="bottom" secondItem="29C-L8-s25" secondAttribute="bottom" id="VD6-Y8-yja"/>
+                                                <constraint firstAttribute="trailing" secondItem="Her-wR-VaA" secondAttribute="trailing" constant="10" id="W8I-8W-6Mx"/>
+                                                <constraint firstItem="29C-L8-s25" firstAttribute="top" secondItem="2ci-cc-QEb" secondAttribute="bottom" constant="10" id="X9t-aR-kx4"/>
+                                                <constraint firstAttribute="trailing" secondItem="29C-L8-s25" secondAttribute="trailing" id="Xxa-qn-N2I"/>
+                                                <constraint firstItem="Her-wR-VaA" firstAttribute="top" secondItem="w6X-go-dOZ" secondAttribute="top" constant="20" id="aR3-Iy-rhr"/>
+                                                <constraint firstItem="Zyj-9G-2fR" firstAttribute="top" secondItem="yB6-VZ-WEy" secondAttribute="bottom" constant="10" id="fhb-ti-aQe"/>
+                                                <constraint firstItem="O4j-fg-hCt" firstAttribute="top" secondItem="Zyj-9G-2fR" secondAttribute="bottom" constant="10" id="foO-GQ-nCF"/>
+                                                <constraint firstItem="Zyj-9G-2fR" firstAttribute="leading" secondItem="w6X-go-dOZ" secondAttribute="leading" constant="8" id="g0e-jD-1Bp"/>
+                                                <constraint firstItem="2ci-cc-QEb" firstAttribute="top" secondItem="UX5-Br-lPM" secondAttribute="bottom" constant="10" id="g3J-8F-0Sy"/>
+                                                <constraint firstAttribute="trailing" secondItem="UX5-Br-lPM" secondAttribute="trailing" constant="15" id="nXy-rm-M0f"/>
+                                                <constraint firstItem="UX5-Br-lPM" firstAttribute="leading" secondItem="Zyj-9G-2fR" secondAttribute="trailing" constant="8" id="qB5-iv-zqf"/>
+                                                <constraint firstItem="yB6-VZ-WEy" firstAttribute="top" secondItem="w6X-go-dOZ" secondAttribute="top" constant="20" id="rZ7-Kn-J8F"/>
+                                                <constraint firstItem="yB6-VZ-WEy" firstAttribute="leading" secondItem="w6X-go-dOZ" secondAttribute="leading" constant="8" id="txc-KF-sSB"/>
+                                                <constraint firstItem="2ci-cc-QEb" firstAttribute="leading" secondItem="O4j-fg-hCt" secondAttribute="trailing" constant="7" id="vVz-Pb-gHG"/>
+                                                <constraint firstAttribute="trailing" secondItem="2ci-cc-QEb" secondAttribute="trailing" constant="50" id="wNU-XI-H7u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="userEmaillbl" destination="3M1-tG-q4u" id="fgy-aG-H4O"/>
-                                            <outlet property="userInfolbl" destination="enh-uJ-2oZ" id="SQr-lP-bx2"/>
-                                            <outlet property="userNamelbl" destination="dWU-cW-8zq" id="q5K-bz-Neq"/>
+                                            <outlet property="userEmaillbl" destination="UX5-Br-lPM" id="RIF-fn-tEp"/>
+                                            <outlet property="userInfolbl" destination="2ci-cc-QEb" id="GTJ-Gc-acd"/>
+                                            <outlet property="userNamelbl" destination="Her-wR-VaA" id="ZpD-vm-5b5"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4B8-Nn-oMv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="1QE-RG-Xyh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4B8-Nn-oMv" secondAttribute="bottom" id="BW5-5f-V7b"/>
-                            <constraint firstItem="4B8-Nn-oMv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F3q-Le-2M1"/>
-                            <constraint firstAttribute="trailing" secondItem="4B8-Nn-oMv" secondAttribute="trailing" id="zEd-xy-JTC"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="userCommentCollectionView" destination="4B8-Nn-oMv" id="i5c-Wc-cYD"/>
+                        <outlet property="userCommentTableView" destination="OTM-8A-VKE" id="hxX-bw-1hC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287.5" y="167.5"/>
+            <point key="canvasLocation" x="87.5" y="112.5"/>
         </scene>
     </scenes>
 </document>
