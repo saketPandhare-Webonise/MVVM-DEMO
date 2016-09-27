@@ -30,7 +30,7 @@ class WebserviceAPI: NSObject {
                 var responbseFromServer: NSArray
                 
                 let JSON = response.result.value
-                if ((JSON) != nil)
+                if ((JSON) != nil && JSON?.error == nil)
                 {
                     responbseFromServer=JSON as! NSArray
                     completionHandler(responbseFromServer ,success: true)
