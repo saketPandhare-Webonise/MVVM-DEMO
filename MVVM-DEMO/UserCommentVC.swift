@@ -43,15 +43,24 @@ class UserCommentVC: UIViewController {
     func getComments ()->Void
     {
         
-        WebServiceWrapper().getComments({ (r) -> Void in
-            let response = r as NSArray
+        WebServiceWrapper().getComments({ (response , success) -> Void in
             
-            for index in 0 ..< response.count
+             if (success)
             {
-                UserCommentsModel().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)
+                print("success has \(success)")
+                let response = response as NSArray
+                for index in 0 ..< response.count
+                {
+                    UserCommentsModel().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)
+                }
+                self.userCommentTableView .reloadData()
+                UIHelper().hideHud(self.view)
             }
-            self.userCommentTableView .reloadData()
-            UIHelper().hideHud(self.view)
+            else
+             {
+                print("you got any error ")
+            }
+            
 
             })
     }
