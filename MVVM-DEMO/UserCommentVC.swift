@@ -47,8 +47,7 @@ class UserCommentVC: UIViewController {
             
              if (success)
             {
-                print("success has \(success)")
-                let response = response as NSArray
+                let response = response as! NSArray
                 for index in 0 ..< response.count
                 {
                     UserCommentsModel().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)

@@ -11,7 +11,7 @@ import Alamofire
 
 class WebserviceAPI: NSObject {
 
-    func callWebservice (serviceName : String , method : String, requestParameters : String?,completionHandler: (NSArray , success : Bool) ->Void)
+    func callWebservice (serviceName : String , method : String, requestParameters : String?,completionHandler: (AnyObject , success : Bool) ->Void)
     {
         
         if Reachability.isConnectedToNetwork() == true {
@@ -27,18 +27,14 @@ class WebserviceAPI: NSObject {
         Alamofire.request(.GET,Constants.BASEURL+Constants.COMMENT, parameters: nil)
             .responseJSON {
                 response in
-                var responbseFromServer: NSArray
-                
                 let JSON = response.result.value
                 if ((JSON) != nil && JSON?.error == nil)
                 {
-                    responbseFromServer=JSON as! NSArray
-                    completionHandler(responbseFromServer ,success: true)
+                    completionHandler(response.result.value! ,success: true)
                 }
                 else
                 {
-                    responbseFromServer=JSON as! NSArray
-                    completionHandler(responbseFromServer ,success: false)
+                    completionHandler(response.result.value! ,success: false)
                 }
                 
             }

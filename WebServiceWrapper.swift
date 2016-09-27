@@ -10,7 +10,7 @@ import UIKit
 
 class WebServiceWrapper: NSObject {
 
-    func getComments (completion: (result: NSArray , success : Bool) -> Void)
+    func getComments (completion: (result: AnyObject , success : Bool) -> Void)
     {
         WebserviceAPI().callWebservice(Constants.BASEURL, method: Constants.GET, requestParameters: nil, completionHandler: { (response , success) -> Void in
            
