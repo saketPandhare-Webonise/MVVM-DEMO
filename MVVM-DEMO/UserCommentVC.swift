@@ -25,12 +25,10 @@ class UserCommentVC: UIViewController {
         
         userCommentTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        
         userCommentTableView.dataSource = myDataSource
         userCommentTableView.delegate = myDataSource
         
        self.showHudOnView()
-        
     }
     
 
@@ -50,7 +48,7 @@ class UserCommentVC: UIViewController {
                 let response = response as! NSArray
                 for index in 0 ..< response.count
                 {
-                    UserCommentsModel().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)
+                   UserCommentsModel().setUserCommentsIntoDb(response .objectAtIndex(index) as! NSDictionary)
                 }
                 self.userCommentTableView .reloadData()
                 UIHelper().hideHud(self.view)

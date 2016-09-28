@@ -25,37 +25,16 @@ class UserCommentTableViewSource: NSObject,UITableViewDelegate,UITableViewDataSo
         totalComments = UserCommentHelper().getUserComments()!
         var singleComment = UserCommentsModel()
         let cell:CommentTableCell = tableView.dequeueReusableCellWithIdentifier("commentCell")! as! CommentTableCell
-        
-       // cell.backgroundColor = UIColor.whiteColor()
-//        cell.layer.borderWidth = 1.0
-//        cell.layer.borderColor = UIColor.blackColor().CGColor
-//        //cell.layer.cornerRadius = 20
-        
+     
         singleComment = totalComments .objectAtIndex(indexPath.row) as! UserCommentsModel
         
         cell.userNamelbl.text = singleComment.userName as String
         cell.userEmaillbl.text = singleComment.userEmail as String
         cell.userInfolbl.text = singleComment.userDescription as String
         
-        
-        
-//        let whiteRoundedView : UIView = UIView(frame: CGRectMake(5, 8, tableView.frame.size.width - 10, tableView.frame.size.height-10))
-//        
-//        whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [1.0, 1.0, 1.0, 0.8])
-//        whiteRoundedView.layer.masksToBounds = false
-//        whiteRoundedView.layer.cornerRadius = 2.0
-//        whiteRoundedView.layer.shadowOffset = CGSizeMake(-1, 1)
-//        whiteRoundedView.layer.shadowOpacity = 0.2
-//        
-//        cell.contentView.addSubview(whiteRoundedView)
-//        cell.contentView.sendSubviewToBack(whiteRoundedView)
-//
-        //cell.textLabel?.text = "saket"
         return cell
     }
     
-    
-     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
